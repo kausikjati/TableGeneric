@@ -13,6 +13,10 @@
 		9710BA7D20FB748E00C18332 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9710BA7C20FB748E00C18332 /* Assets.xcassets */; };
 		9710BA8020FB748E00C18332 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9710BA7E20FB748E00C18332 /* LaunchScreen.storyboard */; };
 		9710BA8820FB75AD00C18332 /* TableviewGeneric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710BA8720FB75AD00C18332 /* TableviewGeneric.swift */; };
+		9710BA8A20FB7FC900C18332 /* ControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710BA8920FB7FC900C18332 /* ControllerModel.swift */; };
+		9710BA8E20FB7FF600C18332 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710BA8D20FB7FF600C18332 /* Tutorial.swift */; };
+		9710BA9220FB800D00C18332 /* URLClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710BA9020FB800D00C18332 /* URLClass.swift */; };
+		9710BA9320FB800D00C18332 /* ClassBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710BA9120FB800D00C18332 /* ClassBack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		9710BA7F20FB748E00C18332 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9710BA8120FB748E00C18332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9710BA8720FB75AD00C18332 /* TableviewGeneric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableviewGeneric.swift; sourceTree = "<group>"; };
+		9710BA8920FB7FC900C18332 /* ControllerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerModel.swift; sourceTree = "<group>"; };
+		9710BA8D20FB7FF600C18332 /* Tutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
+		9710BA9020FB800D00C18332 /* URLClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLClass.swift; sourceTree = "<group>"; };
+		9710BA9120FB800D00C18332 /* ClassBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassBack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,43 @@
 		9710BA7420FB748C00C18332 /* TableGeneric */ = {
 			isa = PBXGroup;
 			children = (
+				9710BA8F20FB7FFB00C18332 /* URLClass */,
+				9710BA8C20FB7FE700C18332 /* Model */,
+				9710BA8B20FB7FD600C18332 /* GenericTable */,
 				9710BA7520FB748C00C18332 /* AppDelegate.swift */,
 				9710BA7720FB748C00C18332 /* ViewController.swift */,
-				9710BA8720FB75AD00C18332 /* TableviewGeneric.swift */,
+				9710BA8920FB7FC900C18332 /* ControllerModel.swift */,
 				9710BA7920FB748C00C18332 /* Main.storyboard */,
 				9710BA7C20FB748E00C18332 /* Assets.xcassets */,
 				9710BA7E20FB748E00C18332 /* LaunchScreen.storyboard */,
 				9710BA8120FB748E00C18332 /* Info.plist */,
 			);
 			path = TableGeneric;
+			sourceTree = "<group>";
+		};
+		9710BA8B20FB7FD600C18332 /* GenericTable */ = {
+			isa = PBXGroup;
+			children = (
+				9710BA8720FB75AD00C18332 /* TableviewGeneric.swift */,
+			);
+			path = GenericTable;
+			sourceTree = "<group>";
+		};
+		9710BA8C20FB7FE700C18332 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9710BA8D20FB7FF600C18332 /* Tutorial.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		9710BA8F20FB7FFB00C18332 /* URLClass */ = {
+			isa = PBXGroup;
+			children = (
+				9710BA9020FB800D00C18332 /* URLClass.swift */,
+				9710BA9120FB800D00C18332 /* ClassBack.swift */,
+			);
+			name = URLClass;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +174,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9710BA9220FB800D00C18332 /* URLClass.swift in Sources */,
+				9710BA9320FB800D00C18332 /* ClassBack.swift in Sources */,
 				9710BA8820FB75AD00C18332 /* TableviewGeneric.swift in Sources */,
+				9710BA8A20FB7FC900C18332 /* ControllerModel.swift in Sources */,
 				9710BA7820FB748C00C18332 /* ViewController.swift in Sources */,
 				9710BA7620FB748C00C18332 /* AppDelegate.swift in Sources */,
+				9710BA8E20FB7FF600C18332 /* Tutorial.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

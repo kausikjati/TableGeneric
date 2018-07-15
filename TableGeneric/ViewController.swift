@@ -9,27 +9,26 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    lazy var tableView : UITableView = {
-        let tav = UITableView()
-        tav.translatesAutoresizingMaskIntoConstraints = false
-        tav.register(CellClass: UITableViewCell.self)
-        //tav.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tav.delegate = self
-        tav.dataSource = self
-        tav.tableFooterView = UIView()
-        return tav
+    @IBOutlet weak var viewModel: ControllerModel!
+    lazy var tutorialTable : UITableView = {
+        let table = UITableView()
+        table.translatesAutoresizingMaskIntoConstraints = false
+        table.register(CellClass: UITableViewCell.self)
+        table.dataSource = self
+        table.delegate = self
+        table.tableFooterView = UIView()
+        return table
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.view.addSubview(tableView)
-        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        
+        viewModel.getDat()
+        viewModel.callBack = {
+            self.tutorialTable.reloadData()
+        }
+        view.addSubview(tutorialTable)
+        tutorialTable.fill(view)
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,21 +40,36 @@ class ViewController: UIViewController {
 }
 
 extension ViewController : UITableViewDelegate , UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5000
+        return viewModel.numberOfrow(section)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 80
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       let cell = tableView.dequeueReusableCell(type: UITableViewCell.self, for: indexPath)
-        //let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "Generic"
+        let cell = tableView.dequeueReusableCell(type: UITableViewCell.self, for: indexPath)
+        let tutorial = viewModel.getItem(indexPath)
+        cell.textLabel?.text = tutorial.name
+        cell.detailTextLabel?.text = tutorial.link
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let tutorial = viewModel.getItem(indexPath)
+        tutorial.name = "You Selected"
+        tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.fade)
+    }
+    
+}
+
+extension UIView {
+    
+    func fill(_ view : UIView) {
+        leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+    }
 }
 
